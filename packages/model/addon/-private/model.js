@@ -482,12 +482,12 @@ class Model extends EmberObject {
     // object is real.
     if (DEBUG) {
       try {
-        return recordIdentifierFor(this).id;
+        return recordIdentifierFor(this)?.id;
       } catch {
         return void 0;
       }
     }
-    return recordIdentifierFor(this).id;
+    return recordIdentifierFor(this)?.id;
   }
   set id(id) {
     const normalizedId = coerceId(id);

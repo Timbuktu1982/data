@@ -37,8 +37,8 @@ const isFastBoot = typeof FastBoot !== 'undefined';
 const _crypto: Crypto = isFastBoot ? (FastBoot.require('crypto') as Crypto) : window.crypto;
 
 if (macroCondition(getOwnConfig<{ polyfillUUID: boolean }>().polyfillUUID)) {
-  installPolyfill();
 }
+installPolyfill();
 
 function uuidv4(): string {
   return _crypto.randomUUID();
